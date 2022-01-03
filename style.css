@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    background-color: #0e0e14;
+    overflow: hidden;
+}
+a {
+    color: inherit; font-size: 1rem; text-decoration-style: dotted;
+}
+* {
+    user-select: none;
+    font-family: system-ui;
+}
+.ball, .paddle, body {
+    transition: color,background-color 0.2s ease-in-out;
+}
+.ball {
+    --x: 50;
+    --y: 50;
+
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    margin-left: -8px;
+    border-radius: 50%;
+    background-color: #9494ff;
+    box-shadow: 0 0 20px 0 rgb(121 121 255 / 80%);
+}
+
+.paddle {
+    --y: 50;
+
+    position: absolute;
+    width: 10px;
+    height: 100px;
+    margin-top: -50px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.7);
+    top: var(--y);
+}
+
+.left {
+    left: 20px;
+}
+.right {
+    right: 20px;
+}
+
+.opponent {
+    background-color: #9494ff;
+    box-shadow: 0 0 20px 0 rgb(121 121 255 / 80%);
+}
+.player {
+    background-color: #99ff99;
+    box-shadow: 0 0 20px 0 rgb(0 255 0 / 70%);
+}
+
+.score {
+
+    color: #99ff99;
+    animation: attention 1.5s infinite;
+    text-shadow: 0px 0px 15px rgb(0 255 0 / 70%);
+    font-size: 4rem;
+    text-align-last: center;
+}
+
+#scoreContainer {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.bounce-anim {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-name: bounce;
+}
+.attention-anim {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-name: attention;
+}
+
+#link {
+    position: absolute;
+    padding: 15px;
+    color: #99ff9933;
+}
+
+/*create a ball growing animation */
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes attention {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
