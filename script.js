@@ -58,6 +58,7 @@ function update(timeSinceStart) {
         ball.reset()
         paused = true
         document.querySelector('.score').innerHTML = 'Game Over!<br/> Score: ' + score + '<br/> <small>Click to play again!</small>'
+        score = 0
         return console.log('GAME OVER')
     }
 

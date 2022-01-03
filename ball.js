@@ -5,12 +5,13 @@ export default class Ball {
             x: -1,
             y: 0.47
         };
-        this.speed = 0.4;
+
         this.reset();
-        this.difficultMultiplier = 0.02;
     }
 
     reset() {
+        this.speed = 0.4;
+        this.difficultMultiplier = 0.02;
         this.setY(window.innerHeight / 2)
         this.setX(window.innerWidth / 2)
     }
